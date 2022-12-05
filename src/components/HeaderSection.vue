@@ -6,9 +6,11 @@
         src="@/img/logotype.png"
         alt="logo"
       >
-      <!--TODO: dinamico, statico solo per lo stile e link-->
+      <!--TODO: dinamico + link, ora è statico solo per lo stile -->
       <ul>
-        <li>Home</li>
+        <li class="active">
+          Home
+        </li>
         <li>About</li>
         <li>Projects</li>
         <li>Services</li>
@@ -18,7 +20,18 @@
     </div>
     <div class="headline-container">
       <div class="headline">
+        <div class="sub-headline">
+          Always the best way you need it
+        </div>
+
         <h1>the best business consulting</h1>
+
+        <div class="links-container">
+          <button>READ MORE</button>
+          <div class="icon">
+            <font-awesome-icon icon="fa-solid fa-play" />
+          </div>
+        </div>
       </div>
     </div>
   </Header>
@@ -31,16 +44,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/variables';
+
 header{
   height: 100vh;
-  background-color: #1F1E38;
+  background-color: $bg-color;
   background-image: url('@/img/portrait-of-young-architect-woman-on-meeting-KFZCE3A.jpg');
   background-position-x: right;
   background-position-y: top;
   background-repeat: no-repeat;
 }
 .navbar{
-  max-width: 1400px;
+  max-width: 1500px;
   height: 70px;
   margin: 0 auto;
   display: flex;
@@ -73,6 +88,10 @@ header{
         color:white;
       }
     }
+    .active{
+      border-top: 3px solid white;
+      color:white;
+    }
   }
 }
 
@@ -85,12 +104,64 @@ header{
 
     .headline{
       width: 40%;
+
+      .sub-headline{
+        color: white;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+      }
+      .sub-headline::before {
+        margin-right: 1rem;
+        content: '';
+        display: inline-block;
+        width: 7%;
+        border-bottom: 3px solid $btn-light-color;
+      }
       h1{
         font-size: 6.3rem;
         text-transform: uppercase;
         color:white;
         line-height: 0.9;
       }
+
+      button{
+        padding: 1.3rem 3rem;
+        margin-top: 3rem;
+        background-color: $btn-light-color;
+        letter-spacing: 0.2rem;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+
+        &:hover{
+          color: white;
+          background-color: $hover-color;
+        }
+      }
+      .links-container{
+        display: flex;
+        align-items: flex-end;
+        gap: 2rem;
+
+        .icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $btn-light-color;
+        width: 3rem;
+        height: 3rem;
+        padding: 1.5rem;
+        border: 2px solid white;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:hover{
+          color: white;
+          background-color: $hover-color;
+        }
+      }
+      }
     }
+
 }
 </style>
