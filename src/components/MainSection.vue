@@ -3,6 +3,7 @@
     <consultant-component class="consultant" />
     <aboutus-component />
     <project-component />
+    <testimonial-component />
   </main>
 </template>
 
@@ -10,6 +11,7 @@
 import AboutusComponent from './AboutusComponent.vue';
 import ConsultantComponent from './ConsultantComponent.vue';
 import ProjectComponent from './ProjectComponent.vue';
+import TestimonialComponent from './TestimonialComponent.vue';
 
 export default {
   name: 'MainSection',
@@ -17,6 +19,7 @@ export default {
     ConsultantComponent,
     AboutusComponent,
     ProjectComponent,
+    TestimonialComponent,
   },
 };
 </script>
