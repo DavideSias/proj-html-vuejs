@@ -35,9 +35,11 @@ export default {
 
 <style lang="scss">
 @import '@/assets/scss/reset';
+@import '@/assets/scss/variables';
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap');
 
 body{
   font-family: 'Bai Jamjuree', sans-serif;
+  background-color: $brand-color;
 }
 </style>

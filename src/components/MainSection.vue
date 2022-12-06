@@ -18,5 +18,6 @@ export default {
 <style lang="scss" scoped>
   .consultant{
     padding: 7rem 0 3rem 0;
+    background-color: white;
   }
 </style>
