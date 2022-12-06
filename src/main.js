@@ -1,10 +1,12 @@
 import Vue from 'vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import {
+  faPlay, faChartLine, faBullhorn, faWallet, faBullseye,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import App from './App.vue';
 
-library.add(faPlay);
+library.add(faPlay, faChartLine, faBullhorn, faWallet, faBullseye);
 Vue.component('FontAwesomeIcon', FontAwesomeIcon);
 
 Vue.config.productionTip = false;

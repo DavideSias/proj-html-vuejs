@@ -47,7 +47,7 @@ export default {
 
 header{
   height: 100vh;
-  background-color: $bg-color;
+  background-color: $brand-color;
   background-image: url('@/img/portrait-of-young-architect-woman-on-meeting-KFZCE3A.jpg');
   background-position-x: right;
   background-position-y: top;
