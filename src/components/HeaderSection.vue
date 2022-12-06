@@ -6,17 +6,10 @@
         src="@/img/logotype.png"
         alt="logo"
       >
-      <!--TODO: dinamico + link, ora è statico solo per lo stile -->
-      <ul>
-        <li class="active">
-          Home
-        </li>
-        <li>About</li>
-        <li>Projects</li>
-        <li>Services</li>
-        <li>Blog</li>
-        <li>Contact</li>
-      </ul>
+      <navbar-element
+        :arr-links="arrLinks"
+        class="menu-links"
+      />
     </div>
     <div class="headline-container">
       <div class="headline">
@@ -38,8 +31,14 @@
 </template>
 
 <script>
+import NavbarElement from '@/components/NavbarElement.vue';
+
 export default {
   name: 'HeaderSection',
+  components: { NavbarElement },
+  props: {
+    arrLinks: Array,
+  },
 };
 </script>
 
@@ -66,32 +65,8 @@ header{
     width: 8%;
   }
 
-  ul{
+  .menu-links{
     height: 100%;
-    display: flex;
-    align-items: center;
-    list-style: none;
-    color: #AAA;
-
-    li{
-      display: flex;
-      align-items: center;
-      height: 100%;
-      margin-left: 2rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      border-top: 3px solid transparent;
-      cursor: pointer;
-
-      &:hover{
-        border-top: 3px solid white;
-        color:white;
-      }
-    }
-    .active{
-      border-top: 3px solid white;
-      color:white;
-    }
   }
 }
 

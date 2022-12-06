@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header-section />
+    <header-section :arr-links="arrLinks" />
     <main-section />
     <footer-section />
   </div>
@@ -17,6 +17,18 @@ export default {
     HeaderSection,
     MainSection,
     FooterSection,
+  },
+  data() {
+    return {
+      arrLinks: [
+        'home',
+        'about',
+        'projects',
+        'services',
+        'blog',
+        'contact',
+      ],
+    };
   },
 };
 </script>
