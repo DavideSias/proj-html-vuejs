@@ -100,8 +100,8 @@ section{
       margin: 1rem 0 2rem 0;
 
       h2{
-        font-size: 2rem;
-        max-width: 30%;
+        font-size: 2.5rem;
+        max-width: 40%;
       }
     }
   }
