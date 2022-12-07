@@ -2,7 +2,7 @@
   <div id="app">
     <header-section :arr-links="arrLinks" />
     <main-section />
-    <footer-section />
+    <footer-section :arr-links="arrLinks" />
   </div>
 </template>
 

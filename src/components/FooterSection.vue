@@ -5,12 +5,74 @@
       <p>A wonderful serenity has taken possession far far away, behind the word mountains.</p>
       <button>get started</button>
     </div>
+    <div class="container">
+      <div class="nav-footer">
+        <img
+          src="@/img/logotype-2-139x23.png"
+          alt="logo"
+        >
+        <navbar-element
+          :arr-links="arrLinks"
+          class="links-footer"
+        />
+
+        <div class="icons">
+          <font-awesome-icon
+            icon="fa-brands fa-instagram"
+            class="icon"
+          />
+          <font-awesome-icon
+            icon="fa-brands fa-linkedin"
+            class="icon"
+          />
+          <font-awesome-icon
+            icon="fa-brands fa-facebook-f"
+            class="icon"
+          />
+          <font-awesome-icon
+            icon="fa-brands fa-twitter"
+            class="icon"
+          />
+        </div>
+      </div>
+      <div class="legal-policy">
+        <div class="privacy">
+          <a href="#!">term of use</a>
+          <a href="#!">pirvacy environmental policy</a>
+        </div>
+        <div class="copyright">
+          <a href="#!">copyright &copy; 2020 phlox consulting. all rights reserved.</a>
+        </div>
+        <div class="icons-end">
+          <font-awesome-icon
+            icon="fa-solid fa-arrow-up"
+            class="icon-arrow"
+            @click="scrollTop"
+          />
+          <font-awesome-icon
+            icon="fa-solid fa-comment"
+            class="icon-comment"
+          />
+        </div>
+      </div>
+    </div>
   </footer>
 </template>
 
 <script>
+import NavbarElement from '@/components/NavbarElement.vue';
+
 export default {
   name: 'FooterSection',
+  components: { NavbarElement },
+  props: {
+    arrLinks: Array,
+  },
+  methods: {
+    scrollTop() {
+      window.scrollTo(0, 0);
+    },
+  },
 };
 </script>
 
@@ -39,19 +101,95 @@ export default {
   }
 
   button{
-      padding: 1.5rem 3rem;
-      background-color: $brand-color;
-      color: white;
-      letter-spacing: 0.2rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
+    padding: 1.5rem 3rem;
+    background-color: $brand-color;
+    color: white;
+    letter-spacing: 0.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
 
-      &:hover{
-        background-color: $btn-light-color;
-        color: $hover-color;
-      }
+    &:hover{
+      background-color: $btn-light-color;
+      color: $hover-color;
+    }
+  }
+
 }
+.container{
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 5rem 0 3rem;
+}
+.nav-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+
+  .icons{
+    color: white;
+    font-size: 1.2rem;
+    display: flex;
+    column-gap: 1rem;
+  }
+  .icon:hover{
+    color: $hover-color;
+    cursor: pointer;
+  }
+
+}
+.legal-policy{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  border-top: 1px solid #888;
+  padding-top: 2rem;
+
+  .privacy{
+    display: flex;
+    flex-direction: column;
+  }
+
+  a{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #888;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
+  .icons-end{
+    position: absolute;
+    right: -10%;
+    bottom: 0;
+    cursor: pointer;
+  }
+  .icon-arrow{
+    padding: 1rem;
+    border-radius: 100%;
+    background-color: white;
+
+    &:hover{
+      background-color: $hover-color;
+    }
+  }
+
+  .icon-comment{
+    padding: 1.5rem;
+    margin-left: 1rem;
+    border-radius: 100%;
+    color: white;
+    background-color: #527ceb;
+    transform: rotateY(180deg);
+
+    &:hover{
+      background-color: $hover-color;
+    }
+  }
 }
 </style>

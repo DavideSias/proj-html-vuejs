@@ -78,6 +78,8 @@ export default {
 
 section{
   position: relative;
+  padding: 7rem 0 3rem 0;
+  background-color: white;
   .container{
     max-width: 1200px;
     margin: 0 auto;

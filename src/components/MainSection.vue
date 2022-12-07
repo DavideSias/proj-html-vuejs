@@ -1,6 +1,6 @@
 <template>
   <main>
-    <consultant-component class="consultant" />
+    <consultant-component />
     <aboutus-component />
     <project-component />
     <testimonial-component />
@@ -28,8 +28,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .consultant{
-    padding: 7rem 0 3rem 0;
-    background-color: white;
-  }
+
 </style>
