@@ -12,7 +12,7 @@
       {{ company }}
     </div>
     <img
-      :src="('@/img/' + imgUrl)"
+      :src="('img/' + imgUrl)"
       alt="testimonial"
     >
   </div>

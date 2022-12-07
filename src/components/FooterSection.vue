@@ -8,7 +8,7 @@
     <div class="container">
       <div class="nav-footer">
         <img
-          src="@/img/logotype-2-139x23.png"
+          src="img/logotype-2-139x23.png"
           alt="logo"
         >
         <navbar-element

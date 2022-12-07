@@ -1,7 +1,7 @@
 <template>
   <div class="card-news">
     <img
-      :src="('@/img' + imgUrl)"
+      :src="('img/' + imgUrl)"
       :alt="imgUrl"
     >
     <div class="card-text">

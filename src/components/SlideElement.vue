@@ -1,7 +1,7 @@
 <template>
   <div class="slide-card">
     <img
-      :src="`@/img/${imgUrl}`"
+      :src="`img/${imgUrl}`"
       :alt="product"
     >
     <!-- TODO: img non si vede -->

@@ -3,7 +3,7 @@
     <div class="navbar">
       <img
         class="logo-navbar"
-        src="@/img/logotype.png"
+        src="img/logotype.png"
         alt="logo"
       >
       <navbar-element
