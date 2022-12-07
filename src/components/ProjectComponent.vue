@@ -17,64 +17,30 @@
           />
         </div>
       </div>
-      <!-- TODO: slider? -->
       <div class="slides">
-        <div class="slide-card">
-          <img
-            src="@/img/DRY-1-790x592.jpg"
-            alt="dry"
-          >
-          <div class="category">
-            <div class="text">
-              <h4>Purinky Products</h4>
-              <p>uncategorized</p>
-            </div>
-            <font-awesome-icon
-              icon="fa-solid fa-plus"
-              class="plus-icon"
-            />
-          </div>
-        </div>
-        <div class="slide-card">
-          <img
-            src="@/img/221bf0b7-8134-43bb-936a-5acbe42db64a-790x592.jpg"
-            alt="scolarship"
-          >
-          <div class="category">
-            <div class="text">
-              <h4>Purinky Products</h4>
-              <p>uncategorized</p>
-            </div>
-            <font-awesome-icon
-              icon="fa-solid fa-plus"
-              class="plus-icon"
-            />
-          </div>
-        </div>
-        <div class="slide-card">
-          <img
-            src="@/img/z1el4c4p-790x592.jpg"
-            alt="vizeon"
-          >
-          <div class="category">
-            <div class="text">
-              <h4>Purinky Products</h4>
-              <p>uncategorized</p>
-            </div>
-            <font-awesome-icon
-              icon="fa-solid fa-plus"
-              class="plus-icon"
-            />
-          </div>
-        </div>
+        <slide-element
+          v-for="(slide, index) in arrProject"
+          :key="index"
+          :img-url="slide.imgUrl"
+          :category="slide.category"
+          :product="slide.product"
+        />
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import SlideElement from './SlideElement.vue';
+
 export default {
   name: 'ProjectComponent',
+  components: {
+    SlideElement,
+  },
+  props: {
+    arrProject: Array,
+  },
 };
 </script>
 
@@ -129,47 +95,6 @@ export default {
       .slides{
         display: flex;
         justify-content: space-between;
-
-        .slide-card{
-          max-width: 32%;
-          position: relative;
-
-          .category{
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            padding: 1rem;
-            color: white;
-            background-color: #F00e2e99;
-            display: none;
-
-            h4{
-              font-size: 1.5rem;
-            }
-
-            p{
-              color: #AAA;
-            }
-
-            .plus-icon{
-              padding: 1rem;
-              background-color: $brand-color;
-              cursor: pointer;
-            }
-          }
-
-          &:hover .category{
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-          }
-
-          img{
-            width: 100%;
-          }
-        }
       }
     }
   }

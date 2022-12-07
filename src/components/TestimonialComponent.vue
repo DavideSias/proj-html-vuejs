@@ -8,65 +8,29 @@
     </div>
     <div class="testimonials">
       <div class="testimonials-container">
-        <div class="testimonials-card">
-          <p>
-            When, while lovely valley teems with vapour around
-            meand eridian sun strike, and but a thousand unknown plants are noticed
-            when I hear the buzz of the little world among us the stalks.
-          </p>
-          <h4>
-            Vera Duncan
-          </h4>
-          <div class="company">
-            Amazon Inc.
-          </div>
-          <img
-            src="@/img/oliver-ragfelt-488196-2.jpg"
-            alt="testimonial"
-          >
-        </div>
-        <div class="testimonials-card">
-          <p>
-            When, while lovely valley teems with vapour around
-            meand eridian sun strike, and but a thousand unknown plants are noticed
-            when I hear the buzz of the little world among us the stalks.
-          </p>
-          <h4>
-            Vera Duncan
-          </h4>
-          <div class="company">
-            Amazon Inc.
-          </div>
-          <img
-            src="@/img/oliver-ragfelt-488196-unsplash.jpg"
-            alt="testimonial"
-          >
-        </div>
-        <div class="testimonials-card">
-          <p>
-            When, while lovely valley teems with vapour around
-            meand eridian sun strike, and but a thousand unknown plants are noticed
-            when I hear the buzz of the little world among us the stalks.
-          </p>
-          <h4>
-            Vera Duncan
-          </h4>
-          <div class="company">
-            Amazon Inc.
-          </div>
-          <img
-            src="@/img/12679.jpg"
-            alt="testimonial"
-          >
-        </div>
+        <testimonial-element
+          v-for="(element, index) in arrTestimonial"
+          :key="index"
+          :img-url="element.imgUrl"
+          :person="element.person"
+          :company="element.company"
+        />
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import TestimonialElement from './TestimonialElement.vue';
+
 export default {
   name: 'TestimonialComponent',
+  components: {
+    TestimonialElement,
+  },
+  props: {
+    arrTestimonial: Array,
+  },
 };
 </script>
 
@@ -115,44 +79,6 @@ section{
       max-width: 1500px;
       display: flex;
       column-gap: 2rem;
-    }
-
-    .testimonials-card{
-      max-width: 30%;
-      padding: 3rem 4rem;
-      color: #888;
-      position: relative;
-
-      p{
-        margin-bottom: 3rem;
-      }
-
-      h4{
-        color: $brand-color;
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
-      }
-
-      p, h4, .company{
-        position: relative;
-        z-index: 2;
-      }
-
-      img{
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 1;
-        display: none;
-      }
-    }
-
-    .testimonials-card:hover img, .testimonials-card:hover h4{
-      display: block;
-      color: white;
     }
   }
 }

@@ -12,54 +12,30 @@
       </div>
 
       <div class="news">
-        <div class="card-news">
-          <img
-            src="@/img/startup-business-people-and-strategy-board-PAJ3P9K-1390x1042.jpg"
-            alt="start-up-bussines"
-          >
-          <div class="card-text">
-            <div class="date">
-              <!-- TODO: separare data e autore nella struttura dati -->
-              july 4, 2019 by paul
-            </div>
-            <div class="news-title">
-              canadian consulting firm acquired by UK giant
-            </div>
-            <p>
-              When, while lovely valley teems with vapour around
-              meand eridian su strikes the upper impenetrable
-              foliage of my trees, and but a
-            </p>
-          </div>
-        </div>
-        <div class="card-news">
-          <img
-            src="@/img/startup-business-people-and-strategy-board-PAJ3P9K-1390x1042.jpg"
-            alt="start-up-bussines"
-          >
-          <div class="card-text">
-            <div class="date">
-              <!-- TODO: separare data e autore nella struttura dati -->
-              july 4, 2019 by paul
-            </div>
-            <div class="news-title">
-              canadian consulting firm acquired by UK giant
-            </div>
-            <p>
-              When, while lovely valley teems with vapour around
-              meand eridian su strikes the upper impenetrable
-              foliage of my trees, and but a
-            </p>
-          </div>
-        </div>
+        <blog-element
+          v-for="(element, index) in arrBlog"
+          :key="index"
+          :img-url="element.imgUrl"
+          :date="element.date"
+          :author="element.author"
+          :title="element.title"
+        />
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import BlogElement from './BlogElement.vue';
+
 export default {
   name: 'BlogComponent',
+  components: {
+    BlogElement,
+  },
+  props: {
+    arrBlog: Array,
+  },
 };
 </script>
 
@@ -116,43 +92,6 @@ section{
       justify-content: space-between;
       margin-top: 2rem;
       column-gap: 2rem;
-      .card-news{
-        width: 50%;
-        position: relative;
-
-        img{
-          width: 100%;
-          height: 100%;
-        }
-      }
-
-      .card-text{
-        background-color: white;
-        padding: 3rem 8rem 4rem 4rem;
-        width: 80%;
-        position: absolute;
-        right: 0;
-        bottom: -20%;
-
-        .date{
-          margin-bottom: 1rem;
-          color: $hover-color;
-          font-weight: 500;
-        }
-
-        .news-title{
-          margin-bottom: 2rem;
-          color: black;
-          text-transform: capitalize;
-          font-size: 2rem;
-          font-weight: 500;
-        }
-
-        p{
-          color: #888;
-          font-size: 1.1rem;
-        }
-      }
     }
   }
 }
