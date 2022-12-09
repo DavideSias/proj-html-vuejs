@@ -42,6 +42,26 @@ export default {
           product: 'Purinky Products 3',
           category: 'uncategorized',
         },
+        {
+          imgUrl: '221bf0b7-8134-43bb-936a-5acbe42db64a-790x592.jpg',
+          product: 'Purinky Products 4',
+          category: 'uncategorized',
+        },
+        {
+          imgUrl: 'DRY-1-790x592.jpg',
+          product: 'Purinky Products 5',
+          category: 'uncategorized',
+        },
+        {
+          imgUrl: 'z1el4c4p-790x592.jpg',
+          product: 'Purinky Products 6',
+          category: 'uncategorized',
+        },
+        {
+          imgUrl: '221bf0b7-8134-43bb-936a-5acbe42db64a-790x592.jpg',
+          product: 'Purinky Products 7',
+          category: 'uncategorized',
+        },
       ],
       arrTestimonial: [
         {

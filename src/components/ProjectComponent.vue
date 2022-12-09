@@ -10,20 +10,27 @@
           <font-awesome-icon
             icon="fa-solid fa-left-long"
             class="icon"
+            @click="moveSlideBack"
           />
           <font-awesome-icon
             icon="fa-solid fa-right-long"
             class="icon"
+            @click="moveSlideForward"
           />
         </div>
       </div>
-      <div class="slides">
+      <div
+        class="slides"
+      >
         <slide-element
           v-for="(slide, index) in arrProject"
           :key="index"
           :img-url="slide.imgUrl"
           :category="slide.category"
           :product="slide.product"
+          eslint-disable-next-line
+          :style="{ transform: `translateX(calc(${startSlide}px - 1rem))`,
+                    transition: 'transform 0.5s'}"
         />
       </div>
     </div>
@@ -40,6 +47,25 @@ export default {
   },
   props: {
     arrProject: Array,
+  },
+  data() {
+    return {
+      startSlide: 0,
+      numberSlide: (this.arrProject.length - 1) * -480,
+    };
+  },
+  methods: {
+    moveSlideForward() {
+      if (this.startSlide > this.numberSlide) {
+        this.startSlide -= 480;
+        console.log(this.startSlide);
+        console.log(this.numberSlide);
+      }
+    },
+    moveSlideBack() {
+      if (this.startSlide < 0) { this.startSlide += 480; }
+      console.log(this.startSlide);
+    },
   },
 };
 </script>
@@ -94,7 +120,8 @@ export default {
 
       .slides{
         display: flex;
-        justify-content: space-between;
+        overflow: hidden;
+        column-gap: 2rem;
       }
     }
   }

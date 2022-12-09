@@ -4,7 +4,6 @@
       :src="`img/${imgUrl}`"
       :alt="product"
     >
-    <!-- TODO: img non si vede -->
     <div class="category">
       <div class="text">
         <h4>{{ product }}</h4>
@@ -32,7 +31,8 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/scss/variables';
 .slide-card {
-  max-width: 32%;
+  width: calc((100% / 3) - 1.5rem);
+  flex-shrink: 0;
   position: relative;
 
   .category {

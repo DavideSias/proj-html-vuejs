@@ -35,8 +35,9 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/scss/variables';
 .card-news{
-        width: 50%;
+        width: 48%;
         position: relative;
+        margin-bottom: 10rem;
 
         img{
           width: 100%;

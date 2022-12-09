@@ -44,7 +44,6 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/variables';
-
 header{
   height: 100vh;
   background-color: $brand-color;
@@ -52,7 +51,9 @@ header{
   background-position-x: right;
   background-position-y: top;
   background-repeat: no-repeat;
+  position: relative;
 }
+
 .navbar{
   max-width: 1500px;
   height: 70px;
@@ -138,6 +139,5 @@ header{
       }
       }
     }
-
 }
 </style>

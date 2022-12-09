@@ -43,7 +43,7 @@ export default {
 @import '@/assets/scss/variables';
 
 section{
-  margin: 10rem 0 20rem;
+  margin: 10rem 0 10rem;
   color: white;
   .container{
     max-width: 1500px;
@@ -90,6 +90,7 @@ section{
     .news{
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       margin-top: 2rem;
       column-gap: 2rem;
     }
