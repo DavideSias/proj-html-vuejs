@@ -63,8 +63,15 @@
                 <div class="user">
                   User
                 </div>
-                <div class="message">
-                  Ciao come posso esserti utile?
+                <div class="messages">
+                  <div
+                    v-for="element in arrMessages"
+                    :key="element.id"
+                    class="message"
+                    :class="element.status"
+                  >
+                    {{ element.message }}
+                  </div>
                 </div>
               </div>
               <label
@@ -72,12 +79,17 @@
               >
                 <input
                   id="msg"
+                  v-model="newMessage.message"
                   class="send-msg"
                   type="text"
                   name="msg"
                   placeholder="Invia un messaggio"
+                  @keyup.enter="sendMessage"
                 >
-                <button class="btn">Send</button>
+                <button
+                  class="btn"
+                  @click="sendMessage"
+                >Send</button>
               </label>
             </div>
           </div>
@@ -99,6 +111,27 @@ export default {
   data() {
     return {
       show: false,
+      arrMessages: [
+        {
+          message: 'ciao come posso esserti utile?',
+          status: 'received',
+          id: 0,
+        },
+        {
+          message: 'ciao vorrei delle informazioni',
+          status: 'sent',
+          id: 1,
+        },
+        {
+          message: 'su che prodotto?',
+          status: 'received',
+          id: 2,
+        },
+      ],
+      newMessage: {
+        message: '',
+        status: 'sent',
+      },
     };
   },
   methods: {
@@ -107,6 +140,13 @@ export default {
     },
     showChat() {
       this.show = !this.show;
+    },
+    sendMessage() {
+      if (this.newMessage.message.trim()) {
+        this.newMessage.message = this.newMessage.message.trim();
+        this.arrMessages.push({ ...this.newMessage });
+        this.newMessage.message = '';
+      }
     },
   },
 };
@@ -230,7 +270,6 @@ export default {
 
   .chat-box{
     width: 300px;
-    height: 350px;
     position: absolute;
     bottom: 70px;
     right: 50px;
@@ -252,20 +291,43 @@ export default {
       text-transform: uppercase;
     }
 
+    .messages{
+      width: 100%;
+      padding-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+
     .message{
       margin-top: 1rem;
-      background-color: #527ceb;
       color: white;
       padding: 0.5rem 1rem;
       border-radius: 10px;
+
+      &::first-letter {
+        text-transform: capitalize;
+      }
+    }
+
+    .received{
+      max-width: 70%;
+      background-color: #888;
+    }
+
+    .sent{
+      align-self: flex-end;
+      max-width: 70%;
+      background-color: #527ceb;
     }
     .send-msg{
       margin-bottom: 1rem;
-      height: 60%;
     }
 
+    input{
+      height: 30px;
+    }
     .btn{
-      height: 60%;
+      height: 30px;
       padding: 0 1rem;
     }
   }
