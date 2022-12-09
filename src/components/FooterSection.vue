@@ -323,12 +323,11 @@ export default {
       margin-bottom: 1rem;
     }
 
-    input{
-      height: 30px;
-    }
-    .btn{
+    .btn, input{
       height: 30px;
       padding: 0 1rem;
+      border-radius: 10px;
+      margin-left: 0.5rem;
     }
   }
 }

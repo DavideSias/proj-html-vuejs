@@ -1,30 +1,32 @@
 <template>
   <section>
-    <div class="about-us">
-      <div class="container">
-        <div class="about-us-text">
-          <h3>about us</h3>
-          <h2>we make your strategy work</h2>
-          <p>
-            When, while lovely valley teems with vapour around
-            meand eridian sun strike, and but a thousand unknown plants are noticed
-            when I hear the buzz of the little world among us the stalks, and grow
-            familiar indescribable forms of the insects and flies, then i feel the
-            presence of the Almighty.
-          </p>
+    <div class="svg">
+      <div class="about-us">
+        <div class="container">
+          <div class="about-us-text">
+            <h3>about us</h3>
+            <h2>we make your strategy work</h2>
+            <p>
+              When, while lovely valley teems with vapour around
+              meand eridian sun strike, and but a thousand unknown plants are noticed
+              when I hear the buzz of the little world among us the stalks, and grow
+              familiar indescribable forms of the insects and flies, then i feel the
+              presence of the Almighty.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="get-started">
-      <div class="text-container">
-        <h2>WE HELP TO DELIVER THE BUSINESS CASE</h2>
-        <p>
-          When, while lovely valley teems with vapour around
-          meand eridian sun strike the upper impenetrable foliage of my trees,
-          and but a thousand unknown
-        </p>
+      <div class="get-started">
+        <div class="text-container">
+          <h2>WE HELP TO DELIVER THE BUSINESS CASE</h2>
+          <p>
+            When, while lovely valley teems with vapour around
+            meand eridian sun strike the upper impenetrable foliage of my trees,
+            and but a thousand unknown
+          </p>
+        </div>
+        <button>GET STARTED</button>
       </div>
-      <button>GET STARTED</button>
     </div>
   </section>
 </template>
@@ -37,6 +39,16 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/variables';
+
+.svg{
+  height: 100%;
+  width: 100%;
+  background-image: url('@/img/Mediamodifier-Design.svg');
+  background-repeat: no-repeat;
+  background-size: 1300px;
+  background-position-y: -200px;
+  background-position-x: 1000px;
+  }
   .about-us{
     height: 85vh;
     background-image: url('@/img/business-people-working-together-on-project-and-5FHSKBL.jpg');

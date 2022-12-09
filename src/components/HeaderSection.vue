@@ -1,28 +1,32 @@
 <template>
   <Header>
-    <div class="navbar">
-      <img
-        class="logo-navbar"
-        src="img/logotype.png"
-        alt="logo"
-      >
-      <navbar-element
-        :arr-links="arrLinks"
-        class="menu-links"
-      />
-    </div>
-    <div class="headline-container">
-      <div class="headline">
-        <div class="sub-headline">
-          Always the best way you need it
+    <div class="svg">
+      <div class="bg-container">
+        <div class="navbar">
+          <img
+            class="logo-navbar"
+            src="img/logotype.png"
+            alt="logo"
+          >
+          <navbar-element
+            :arr-links="arrLinks"
+            class="menu-links"
+          />
         </div>
+        <div class="headline-container">
+          <div class="headline">
+            <div class="sub-headline">
+              Always the best way you need it
+            </div>
 
-        <h1>the best business consulting</h1>
+            <h1>the best business consulting</h1>
 
-        <div class="links-container">
-          <button>READ MORE</button>
-          <div class="icon">
-            <font-awesome-icon icon="fa-solid fa-play" />
+            <div class="links-container">
+              <button>READ MORE</button>
+              <div class="icon">
+                <font-awesome-icon icon="fa-solid fa-play" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -44,9 +48,24 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/variables';
-header{
+
+.svg{
   height: 100vh;
-  background-color: $brand-color;
+  width: 100%;
+  background-image: url('@/img/Mediamodifier-Design.svg');
+  background-repeat: no-repeat;
+  background-size: 2000px;
+  background-position-y: -800px;
+  background-position-x: -500px;
+  }
+
+.svg-second{
+  background-size: 1500px;
+  background-position-y: -700px;
+  background-position-x: 25px;
+}
+.bg-container{
+  height: 100vh;
   background-image: url('@/img/portrait-of-young-architect-woman-on-meeting-KFZCE3A.jpg');
   background-position-x: right;
   background-position-y: top;
