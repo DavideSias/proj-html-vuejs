@@ -48,13 +48,13 @@ export default {
   width: 100%;
   background-image: url('@/img/Mediamodifier-Design.svg');
   background-repeat: no-repeat;
-  background-size: 1300px;
-  background-position-y: -400px;
+  background-size: 1200px;
+  background-position-y: 0;
   background-position-x: -400px;
+  padding: 10rem 0 10rem;
   }
 
 section{
-  margin: 10rem 0 10rem;
   color: white;
   .container{
     max-width: 1500px;
