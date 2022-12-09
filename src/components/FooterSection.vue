@@ -52,7 +52,35 @@
           <font-awesome-icon
             icon="fa-solid fa-comment"
             class="icon-comment"
+            @click="showChat"
           />
+          <div
+            class="chatbox-container"
+            :class="{showChatbox : show}"
+          >
+            <div class="chat-box">
+              <div>
+                <div class="user">
+                  User
+                </div>
+                <div class="message">
+                  Ciao come posso esserti utile?
+                </div>
+              </div>
+              <label
+                for="msg"
+              >
+                <input
+                  id="msg"
+                  class="send-msg"
+                  type="text"
+                  name="msg"
+                  placeholder="Invia un messaggio"
+                >
+                <button class="btn">Send</button>
+              </label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -68,9 +96,17 @@ export default {
   props: {
     arrLinks: Array,
   },
+  data() {
+    return {
+      show: false,
+    };
+  },
   methods: {
     scrollTop() {
       window.scrollTo(0, 0);
+    },
+    showChat() {
+      this.show = !this.show;
     },
   },
 };
@@ -191,5 +227,53 @@ export default {
       background-color: $hover-color;
     }
   }
+
+  .chat-box{
+    width: 300px;
+    height: 350px;
+    position: absolute;
+    bottom: 70px;
+    right: 50px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+      rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+      rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .user{
+      margin-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #527ceb;
+      color: #527ceb;
+      text-transform: uppercase;
+    }
+
+    .message{
+      margin-top: 1rem;
+      background-color: #527ceb;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+    }
+    .send-msg{
+      margin-bottom: 1rem;
+      height: 60%;
+    }
+
+    .btn{
+      height: 60%;
+      padding: 0 1rem;
+    }
+  }
+}
+.chatbox-container{
+    display: none;
+  }
+.showChatbox{
+  display: block;
 }
 </style>
